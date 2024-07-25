@@ -212,6 +212,11 @@ vim.keymap.set('n', '<leader>jr', function()
   OpenFloatingTerminal 'mvn clean package && java -jar target/*-SNAPSHOT.jar'
 end, { noremap = true, silent = true, desc = 'Compile and Run Java program' })
 
+-- Set keymap to open the terminal and execute java program
+vim.keymap.set('n', '<leader>js', function()
+  OpenFloatingTerminal 'mvn spring-boot:run'
+end, { noremap = true, silent = true, desc = 'Run Spring boot application' })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -928,7 +933,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
